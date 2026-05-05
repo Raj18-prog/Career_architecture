@@ -102,5 +102,111 @@
       "Excel": 6,
       "Communication": 5
     }
+  },
+  "Cybersecurity": {
+    "requiredSkills": [
+      "Networking",
+      "Linux",
+      "Python",
+      "SIEM",
+      "Incident Response",
+      "Threat Analysis",
+      "Vulnerability Assessment",
+      "Penetration Testing",
+      "Cryptography",
+      "Security Tools",
+      "Git"
+    ],
+    "weights": {
+      "Networking": 10,
+      "Linux": 9,
+      "Incident Response": 9,
+      "Threat Analysis": 8,
+      "Vulnerability Assessment": 8,
+      "SIEM": 7,
+      "Penetration Testing": 7,
+      "Python": 6,
+      "Cryptography": 6,
+      "Security Tools": 5,
+      "Git": 4
+    }
+  },
+  "UI/UX Designer": {
+    "requiredSkills": [
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Figma",
+      "Visual Design",
+      "Design Systems",
+      "Usability Testing",
+      "Information Architecture",
+      "Accessibility",
+      "Communication"
+    ],
+    "weights": {
+      "Figma": 10,
+      "Prototyping": 9,
+      "User Research": 8,
+      "Wireframing": 8,
+      "Visual Design": 7,
+      "Design Systems": 7,
+      "Usability Testing": 6,
+      "Accessibility": 6,
+      "Information Architecture": 5,
+      "Communication": 5
+    }
+  },
+  "DevOps Engineer": {
+    "requiredSkills": [
+      "Linux",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Terraform",
+      "Shell Scripting",
+      "Monitoring",
+      "Networking",
+      "Git"
+    ],
+    "weights": {
+      "AWS": 10,
+      "Docker": 9,
+      "Kubernetes": 9,
+      "CI/CD": 8,
+      "Linux": 8,
+      "Terraform": 7,
+      "Monitoring": 7,
+      "Networking": 6,
+      "Shell Scripting": 6,
+      "Git": 4
+    }
+  },
+  "Product Manager": {
+    "requiredSkills": [
+      "Product Strategy",
+      "Roadmapping",
+      "User Research",
+      "Market Analysis",
+      "Stakeholder Management",
+      "Agile",
+      "Scrum",
+      "Analytics",
+      "Communication",
+      "Prioritization"
+    ],
+    "weights": {
+      "Product Strategy": 10,
+      "Roadmapping": 9,
+      "Stakeholder Management": 8,
+      "Prioritization": 8,
+      "User Research": 7,
+      "Market Analysis": 7,
+      "Analytics": 6,
+      "Communication": 6,
+      "Agile": 5,
+      "Scrum": 5
+    }
   }
 }
