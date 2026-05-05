@@ -6,24 +6,42 @@ import resumeRoutes from "./routes/resume.routes.js";
 
 const app = express();
 
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  "http://localhost:5173",
-  "http://127.0.0.1:5173"
-].filter(Boolean);
+const normalizeOrigin = (origin) => origin.replace(/\/$/, "");
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`Origin ${origin} is not allowed by CORS`));
-    },
-    credentials: true
-  })
+const allowedOrigins = new Set(
+  [
+    process.env.CLIENT_URL,
+    ...(process.env.CLIENT_URLS || "").split(","),
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+  ]
+    .filter(Boolean)
+    .map((origin) => origin.trim())
+    .map(normalizeOrigin)
 );
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const requestOrigin = normalizeOrigin(origin);
+
+    if (allowedOrigins.has(requestOrigin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`Origin ${origin} is not allowed by CORS`));
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json({ limit: "2mb" }));
 
 app.get("/api/health", (_req, res) => {
@@ -37,7 +55,10 @@ app.use("/api/career", careerRoutes);
 // Central error handler keeps controller code focused on happy-path logic.
 app.use((error, _req, res, _next) => {
   console.error(error);
-  const status = error.statusCode || 500;
+  const status = error.message?.includes("not allowed by CORS")
+    ? 403
+    : error.statusCode || 500;
+
   res.status(status).json({
     message: error.message || "Something went wrong"
   });
