@@ -1,0 +1,106 @@
+{
+  "Frontend Developer": {
+    "requiredSkills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Redux",
+      "TypeScript",
+      "REST API",
+      "Git",
+      "Responsive Design",
+      "Testing"
+    ],
+    "weights": {
+      "React": 10,
+      "JavaScript": 9,
+      "TypeScript": 8,
+      "REST API": 7,
+      "Testing": 7,
+      "Redux": 6,
+      "Responsive Design": 6,
+      "HTML": 5,
+      "CSS": 5,
+      "Git": 4
+    }
+  },
+  "Backend Developer": {
+    "requiredSkills": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "SQL",
+      "REST API",
+      "JWT",
+      "Docker",
+      "Testing",
+      "Git",
+      "System Design"
+    ],
+    "weights": {
+      "Node.js": 10,
+      "Express": 9,
+      "MongoDB": 8,
+      "REST API": 8,
+      "SQL": 7,
+      "JWT": 6,
+      "System Design": 6,
+      "Testing": 5,
+      "Docker": 5,
+      "Git": 4
+    }
+  },
+  "Full Stack MERN Developer": {
+    "requiredSkills": [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "JavaScript",
+      "TypeScript",
+      "REST API",
+      "JWT",
+      "Git",
+      "Testing",
+      "Deployment"
+    ],
+    "weights": {
+      "React": 10,
+      "Node.js": 10,
+      "Express": 9,
+      "MongoDB": 9,
+      "JavaScript": 8,
+      "REST API": 8,
+      "JWT": 7,
+      "TypeScript": 6,
+      "Testing": 6,
+      "Deployment": 5,
+      "Git": 4
+    }
+  },
+  "Data Analyst": {
+    "requiredSkills": [
+      "SQL",
+      "Python",
+      "Excel",
+      "Tableau",
+      "Power BI",
+      "Statistics",
+      "Data Cleaning",
+      "Data Visualization",
+      "Communication"
+    ],
+    "weights": {
+      "SQL": 10,
+      "Python": 9,
+      "Statistics": 8,
+      "Data Visualization": 8,
+      "Power BI": 7,
+      "Tableau": 7,
+      "Data Cleaning": 7,
+      "Excel": 6,
+      "Communication": 5
+    }
+  }
+}
